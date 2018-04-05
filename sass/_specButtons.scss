@@ -1,0 +1,51 @@
+/*-----Specs buttons-----*/
+.specs__options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  margin: 2rem;
+}
+
+.spec__options--icons {
+  margin: auto;
+  border-bottom: .1rem solid rgba(102, 98, 98, 0.24);
+  border-radius: 2rem;
+  transition: all .2s;
+  width: 18rem;
+}
+
+.spec__options--icons:hover {
+  border-bottom: .1rem solid rgba(102, 98, 98, .5);
+  border-radius: 2rem;
+  transition: all .2s;
+  transform: scale(1.1);
+  cursor: pointer; 
+}
+
+.spec__options--icons:active {
+  transform: translateY(.1rem);
+  border-bottom: .1rem solid rgba(42, 6, 245, 0.5);
+}
+
+.icon {
+  font-size: 2.5rem;
+  display: inline-block;
+  font-weight: bold; 
+} 
+
+.options-text {
+  display: inline-block;
+  font-size: 1rem;
+  transform: translateY(rem);
+}
+
+.options-text {
+  display: inline-block;
+  transform: translate(.5rem) scale(1.1);
+  font-family: helvetica;
+
+  -moz-transform: translate(.5rem);
+  -ms-transform: translate(.5rem);
+  -o-transform: translate(.5rem);
+  -webkit-transform: translate(.5rem);
+}
