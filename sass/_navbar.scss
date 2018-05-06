@@ -36,9 +36,8 @@
 /* navigation hamburger lines */
 .navigation__icon1 {
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 0;
-  transform: translateY(-50%);
   width: 2rem;
   height: 2px;
   background-color: #333;
@@ -49,7 +48,7 @@
   position: absolute;
   top:50%;
   left: 0;
-  transform: translateY(-50%);
+  // transform: translateY(-50%);
   width: 2rem;
   height: 2px;
   background-color: #333;
@@ -60,7 +59,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  transform: translateY(-50%);
+  // transform: translateY(-50%);
   width: 2rem;
   height: 2px;
   background-color: #333;
