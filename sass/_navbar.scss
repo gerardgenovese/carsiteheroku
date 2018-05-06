@@ -38,6 +38,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  transform: translateY(-50%);
   width: 2rem;
   height: 2px;
   background-color: #333;
@@ -125,11 +126,11 @@ and (max-device-width : 1024px)  {
 
 @media(max-width:450px){
   .nav-all {
-    top: .8rem;
+    top: .4rem;
   }
   .img__logo {
     width: 5rem;
-    margin-bottom:.5rem;
+    // margin-bottom:.5rem;
   }
   .nav-nav a {
     font-size: 1rem;

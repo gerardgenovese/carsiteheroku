@@ -1,8 +1,10 @@
 let express = require('express');
 let app = express();
+// let sass = require('node-sass');
 
 
 app.use(express.static('public'));
+app.use('*/sass',express.static('sass'));
 
 app.get('/', (req, res) => {
   res.render('index.ejs');
