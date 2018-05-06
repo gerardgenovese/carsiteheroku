@@ -1,62 +1,175 @@
-.car-build__main {
-  width: 100%;
-  height: 60vh;
+#mainDiv {
   position: relative;
+  height: 50%;
+  // width: 100%;
+  background-color: transparent;
+}
 
+.car-contain {
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
+.car-build__main {
+  margin-top: 3rem;
+
+  &-car-image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50%;
+    width: 50%;
+    transition: .2s;
+    z-index: 100;
+  }
 
   &-car-title {
     position: absolute;
     top: 5%;
-    left: 15%;
+    left: 5%;
     z-index: 1;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 5rem;
+    transition: .2s;
+    font-family: 'Kanit', sans-serif;
+    z-index: 101;
+
+
+    &:before {
+      content: 'toyota ';
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
   }
   &-car-price {
     position: absolute;
-    top: 5%;
+    top: 15%;
     right: 15%;
     z-index: 1;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  &-car-starting {
-    position: absolute;
-    top: 7.5%;
-    right: 11%;
-    z-index: 1;
-    font-size: .6rem;
-    text-transform: uppercase;
-    font-style: italic;
-
-  }
-  &-car-image {
-    // position: absolute;
-    // top: 70%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    display: block;
-    margin: 0 auto;
+    font-size: 2rem;
+    font-family: 'Kanit', sans-serif;
+    transition: .2s;
+    z-index: 106;
+    &:before {
+      content: "$";
+    }
+    &:after {
+      content:' starting';
+      font-size:.8rem;
+      font-style: italic;
+    }
   }
 
-  &--left {
-    position: absolute;
-    top: 50%;
-    left: 15%;
-
-  }
   &--right {
     position: absolute;
     top: 50%;
-    right: 15%;
+    right: 12%;
     z-index: 9;
-    width: 2rem;
+    cursor: pointer;
+    background-color: rgb(189, 184, 184);
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: .5rem 2rem;
+    transition: .2s;
+
+    &:hover {
+      background-color: rgb(92, 92, 167);
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+
+}
+
+.fa-arrow-circle-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.car-build__main--right:hover > .fa-arrow-circle-right {
+  animation: moveButton 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moveButton {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
   }
 }
 
 
+@media(max-width:1000px){
+  .car-build__main {
 
-// .one {
-//   opacity: 0;
-//   transition: opacity 1  2s ease-in;
-// }
+    &-car-title{
+      left: .5%;
+    }
+    &-car-price{
+      top: 12%;
+    }
+  }
+}
+
+@media(max-width:900px){
+  .car-build__main {
+
+    &-car-title {
+      font-size:3rem;
+      top: 10%;
+
+      &:before{
+        font-size:1.5rem;
+      }
+    }
+    &-car-price {
+      top:13%;
+      right: 8%;
+    }
+  }
+}
+
+@media(max-width:600px){
+  .car-build__main {
+    &-car-title {
+      font-size:2.5rem;
+      &:before{
+        font-size:1rem;
+      }
+    }
+    &-car-price {
+      top:20%;
+      font-size: 1rem;
+      &:after{
+        font-size: .6rem;
+      }
+    }
+    &--right {
+      padding: .5rem 1rem;
+    }
+  }
+}
+
+@media(max-width:500px){
+  .car-build__main {
+    &-car-title {
+      font-size: 2rem;
+
+      &:before{
+        font-size:1rem;
+      }
+    }
+    &-car-price {
+      font-size: 1rem;
+    }
+
+  }
+}
+
