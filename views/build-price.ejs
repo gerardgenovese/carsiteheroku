@@ -1,0 +1,582 @@
+<%include partials/header%>
+<body class="build-price" onload="keepShopping()">
+
+  
+<!-- Navigation -->
+<nav class="navbar">
+  <span class="open-slide">
+      <input type="checkbox" class="navigation__checkbox hamburger" id="navi-toggle">
+      <label for="navi-toggle" class="navigation__button">
+        <span class="nav-all">
+          <span class="navigation__icon1"></span>
+          <span class="navigation__icon2"></span>
+          <span class="navigation__icon3"></span>
+        </span>
+      </label>
+  </span>
+</nav>
+<img class="img__logo" src="img/toyota-logo.png" alt="">
+<div id="nav-menu" class="nav-nav">
+    <a href="/">Explore</a>
+    <a href="/build-choose">Build Car</a>
+</div>
+
+
+
+<div class="navCloseFunction" onclick="navCloseFunction(event)">
+
+ <!--For Positioning seems to only be car view change button-->
+ <div id="mainDiv">
+
+  <!--====Select Vehicles LINK TEXT====-->
+  <div class="car-build-dropdown">
+    <span class="open-select-vehicle">
+      <input type="checkbox" class="car-build-dropdown-checkbox" id="car-build-select-toggle">
+      <label for="car-build-select-toggle" class="car-build-select-vehicle__button">
+        <div class="car-build-dropdown-select-text">
+            <!-- Select Vehicles&#8628; -->
+            Select Vehicles<i class="fas fa-sort-down"></i>
+        </div>
+      </label> 
+    </span>
+  </div>
+  <!--*SELECT* VEHICLE DROPDOWN MENU-->
+  <div id="select-vehicle" class="car-build-dropdown-select-menu">
+    <a class="car-build-dropdown__carLink" href="#"><img src="img/camry/side/camry-side-red.jpg" class="car-build-dropdown__carImg" alt="" onclick="camrySelect()"; return false></a>
+    <a class="car-build-dropdown__carLink" href="#"><img src="img/corolla/side/corolla-side-blue.jpg" class="car-build-dropdown__carImg" alt="" onclick="corollaSelect()"; return false></a>
+    <a class="car-build-dropdown__carLink" href="#"><img src="img/t86/side/t86-side-red.jpg" class="car-build-dropdown__carImg" alt="" onclick="t86Select()"; return false></a>
+    <a class="car-build-dropdown__carLink" href="#"><img src="img/yaris/side/yaris-side-blue.jpg" class="car-build-dropdown__carImg" alt="" onclick="yarisSelect()"; return false></a>
+    <a class="car-build-dropdown__carLink" href="#"><img src="img/avalon/side/avalon-side-white.jpg" class="car-build-dropdown__carImg" alt="" onclick="avalonSelect()"; return false></a>
+  </div>
+
+  <!--==== Vehicle Cart Accessories Your Vehicle Button====-->
+  <div class="car-build-vehicle_cart">
+    <span class="vehicle_cart">
+      <input type="checkbox" class="car-build-vehicle_cart__checkbox" id="car-build-vehicle_cart__toggle">
+      <label for="car-build-vehicle_cart__toggle" class="car-build-vehicle_cart__button">
+        <div class="car-build-vehicle_cart-select" onclick="yourVehicleCart()">
+          Vehicle Cart <i class="fas fa-car"></i>
+        </div>
+      </label>
+    </span>
+  </div>
+
+  <!--Vehicle Cart DROPDOWN MENU-->
+  <div id="vehicle_cart-menu" class="car-build-vehicle_cart-select-menu">
+    <p class="car-build-vehicle_cart-dropdown__carColor" id="vehicle_cart-color"></p>
+    <p class="car-build-vehicle_cart-dropdown__carModel" id="vehicle_cart-model"></p>
+    <div class="menu-car-bg"><img src="" class="car-build-vehicle_cart-dropdown__carImg" alt="" id="vehicle_cart-car"></div>
+    <p class="car-build-vehicle_cart-dropdown__carPrice" id="vehicle_cart-price"></p>
+    <p class="car-build-vehicle_cart-dropdown__engine" id="vehicle_cart-engine"></p>
+    <p class="car-build-vehicle_cart-dropdown__alloy" id="vehicle_cart-alloy"></p>
+    <p class="car-build-vehicle_cart-dropdown__mats" id="vehicle_cart-mats"></p>
+    <p class="car-build-vehicle_cart-dropdown__cargo" id="vehicle_cart-cargo"></p>
+    <p class="car-build-vehicle_cart-dropdown__total" id="vehicle_cart-total"></p>
+    <a href="/checkout"><button id="cart-checkout">Check Out</button>
+  </div></a>
+
+
+
+  <div class="vehicleCartFunction" onclick="vehicleCartFunction(event)"> 
+
+
+
+
+  
+  <!--CAR BUILD MAIN CAR-->
+  <!-- <section id="car-build__main-section"> -->
+  <div class="car-build__main">
+    <p class="car-build__main-car-title" id="carTitleDisplay"></p>
+    <p class="car-build__main-car-price" id="carPriceDisplay"></p>
+    <div class="image-background"></div>
+
+    <div class="car-contain">
+    <img src="" class="car-build__main-car-image" id="carImgDisplay" alt="">
+    </div>
+    <button class="car-build__main--right" id="right-button"><i class="fas fa-arrow-circle-right"></i></button>
+  </div>
+
+ <!--mainDiv end-->
+</div>
+
+<!--vehicleCart End1-->
+</div> 
+
+<div class="vehicleCartFunction" onclick="vehicleCartFunction(event)"> 
+
+<!--CAR BUILD PANEL-->
+  <div class="car-build__panel">
+    <div class="car-build__panel-buttons car-panel active" onclick="changeColor()"; return false>
+        <i class="fas fa-car car-build__icon--i"></i>
+      <p class="car-build__panel-text">Colors</p>
+    </div>
+    <div class="car-build__panel-buttons" onclick="changeEngine()"; return false>
+        <i class="fas fa-cogs car-build__icon--i"></i>
+      <p class="car-build__panel-text">Engine Type</p>
+    </div>
+    <div class="car-build__panel-buttons" onclick="accessories()">
+        <i class="fas fa-tags car-build__icon--i"></i>
+      <p class="car-build__panel-text">Accessories</p>
+    </div>
+    <div class="car-build__panel-buttons panel-gallery" onclick="galleryPanel()">
+      <i class="fas fa-images car-build__icon--i"></i>
+    <p class="car-build__panel-text">Gallery</p>
+    </div>
+    <div class="car-build__panel-buttons  calc-panel" onclick="loanCalculator()"; return false>
+      <i class="fas fa-calculator car-build__icon--i"></i>
+    <p class="car-build__panel-text">Finance</p>
+    </div>
+  </div>
+
+
+
+
+
+<!--CAR BUILD COLORS SECTION-->
+  <section id="car-build__colors">
+    <div class="car-build__colors mt-3">
+      <button class="btn btn-button car-colors" id="white" onclick="changeWhite(event)"></button>
+      <button class="btn btn-button car-colors" id="black" onclick="changeBlack(event)"></button>
+      <button class="btn btn-button car-colors" id="gray" onclick="changeGray(event)"></button>
+    </div>
+    <div class="car-build__colors colors-bottom">
+    <button class="btn btn-button car-colors" id="smoke" onclick="changeSmoke(event)"></button>
+    <button class="btn btn-button car-colors" id="blue" onclick="changeBlue(event)"></button>
+    <button class="btn btn-button car-colors" id="red" onclick="changeRed(event)"></button>
+    </div>
+  </section>
+
+
+
+
+<!--CAR BUILD ENGINE SECTION-->
+  <section id="car-build__engine">
+    <div class="car-build__engine">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <label class="car-build__engine--info"> <h3 class="car-build__engine--header">2.5 4-Cyl. Super Thruster Engine</h3>
+              <p class="car-build__engine--trans">8-Speed Automatic</p>
+              <ul class="car-build__engine--specs">
+                <li class="car-build__engine--spec">Direct Shift 8 Speed Automatic Transmission</li>
+                <li class="car-build__engine--spec">203hp @6600rp,</li>
+                <li class="car-build__engine--spec">184 lb-ft @5000 rpm</li>
+                <li class="car-build__engine--spec"> VVt-i D4S self-cleaning injectors</li>
+              </ul>
+              <div class="car-build__engine--cost">
+                Cost: $0 (Standard)
+              </div>
+                <input type="radio" checked="checked" name="engine-price" value="0" id="engine-standard" onclick="Car.enginePrice(value)">
+                <span class="car-build__engine--checkmark"></span>
+              </label>
+            </div>
+              <div class=" col-md-6 col-sm-12">
+              <label class="car-build__engine--info">
+                <h3 class="car-build__engine--header">2.5 4-Cyl. Super Thruster Engine</h3>
+                <p class="car-build__engine--trans">8-Speed Manual</p>
+                <ul class="car-build__engine--specs">
+                  <li class="car-build__engine--spec">Direct Shift 8 Speed Turbo</li>
+                  <li class="car-build__engine--spec">203hp @6600rp,</li>
+                  <li class="car-build__engine--spec">184 lb-ft @5000 rpm</li>
+                  <li class="car-build__engine--spec"> VVt-i D4S self-cleaning injectors</li>
+                </ul>
+                  
+                <div class="car-build__engine--cost"> 
+                  Cost: $500.00 
+                </div>
+              <input type="radio" name="engine-price" id ="engine-manual" value="500" onclick="Car.enginePrice(value)">
+              <span class="car-build__engine--checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!--ACCESSORIES-->
+<section id="car-build__accessories">
+  <div class="car-build__accessories">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 car-build__accs">
+          <div class="car-build__accs--items">
+            <img src="img/accessories/wheel-lock.jpg" class="car-build__accs--img" alt="">
+            <p class="car-build__accs--header">
+              Alloy Wheel Locks
+            </p>
+            <p class="car-build__accs--price">$75 <small>msrp</small>
+            </p>
+            <button class="car-build__accs--details" data-toggle="modal" data-target="#wheel-lock">
+              View Details
+            </button>
+            <div class="box1 car-build__accs--checkbox">
+              <label class="container car-build__accs--checkbox-label">
+                <input type="checkbox" id="addItem1" onclick="Car.accessoryPrice()">
+                <span class="checkmark" id="addRemove1">ADD</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 car-build__accs">
+          <div class="car-build__accs--items">
+            <img src="img/accessories/leather-mats.jpg" class="car-build__accs--img" alt="">
+            <p class="car-build__accs--header">
+              Leather-Mats
+            </p>
+            <p class="car-build__accs--price">$75 <small>msrp</small>
+            </p>
+            <button class="car-build__accs--details" data-toggle="modal" data-target="#leather-mats">
+              View Details
+            </button>
+            <div class="box1 car-build__accs--checkbox">
+              <label class="container car-build__accs--checkbox-label">
+                <input type="checkbox" id="addItem2" onclick="Car.accessoryPrice()">
+                <span class="checkmark" id="addRemove2">ADD</span>
+              </label>
+            </div>
+          </div>  
+        </div>
+        <div class="col-md-4 col-sm-12 car-build__accs">
+          <div class="car-build__accs--items">
+            <img src="img/accessories/cargo-tote.jpg" class="car-build__accs--img" alt="">
+            <p class="car-build__accs--header">
+              Cargo-Tote
+            </p>
+            <p class="car-build__accs--price">$75 <small>msrp</small>
+            </p>
+            <button class="car-build__accs--details" data-toggle="modal" data-target="#cargo-tote">
+              View Details
+            </button>
+            <div class="box1 car-build__accs--checkbox">
+              <label class="container car-build__accs--checkbox-label">
+                <input type="checkbox" id="addItem3" onclick="Car.accessoryPrice()">
+                <span class="checkmark" id="addRemove3">ADD</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  
+  <!-- WHEEL LOCK MODAL -->
+  <div class="modal" id="wheel-lock">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Wheel Lock</h5>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus unde veniam harum magnam molestias dignissimos omnis architecto, quod, obcaecati dolorum debitis dolore porro qui, iusto quo accusantium voluptates pariatur illo.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEATHER MATS MODAL -->
+  <div class="modal" id="leather-mats">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Leather Mats</h5>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus unde veniam harum magnam molestias dignissimos omnis architecto, quod, obcaecati dolorum debitis dolore porro qui, iusto quo accusantium voluptates pariatur illo.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARGO-TOTE MODAL -->
+  <div class="modal" id="cargo-tote">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cargo Tote</h5>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus unde veniam harum magnam molestias dignissimos omnis architecto, quod, obcaecati dolorum debitis dolore porro qui, iusto quo accusantium voluptates pariatur illo.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gallery-placeholder"></div>
+
+<!--CAR BUILD GALLERY MODEL SECTION-->
+
+  <!--CAMRY-->
+<div id="galleryModel" class="galleryModel">
+  <span class="gallery-close cursor" onclick="closeGalleryModal()">&times;</span> 
+
+  <div class="gallery-modal-content">
+    <div class="gallery-slides">
+      <img src="img/gallery/camry/gallery-camry-black.jpg" alt="Camry Black">
+    </div>
+    <div class="gallery-slides">
+      <img src="img/gallery/camry/gallery-camry-blue.jpg" alt="Camry blue">
+    </div>
+    <div class="gallery-slides">
+      <img src="img/gallery/camry/gallery-camry-gray.jpg" alt="Camry gray">
+    </div>
+    <div class="gallery-slides">
+      <img src="img/gallery/camry/gallery-camry-inside.jpg" alt="Camry inside">
+    </div>
+    <div class="gallery-slides">
+      <img src="img/gallery/camry/gallery-camry-inside2.jpg" alt="Camry inside2">
+    </div>
+    <div class="gallery-slides">
+      <img src="img/gallery/camry/gallery-camry-white.jpg" alt="Camry white">
+    </div>
+
+    <div>
+      <a class="gallery-prev gallery-arrows" onclick="nextGallerySlide(-1)">&#10094;</a>
+      <a class="gallery-next gallery-arrows" onclick="nextGallerySlide(1)">&#10095;</a>
+    </div>
+  </div>
+</div>
+
+
+
+  <!--COROLLA-->
+<div id="galleryModel2" class="galleryModel">
+  <span class="gallery-close cursor" onclick="closeGalleryModal()">&times;</span> 
+
+  <div class="gallery-modal-content">
+    <div class="gallery-slides2">
+      <img src="img/gallery/corolla/gallery-corolla-black.jpg" alt="corolla Black">
+    </div>
+    <div class="gallery-slides2">
+      <img src="img/gallery/corolla/gallery-corolla-blue.jpg" alt="corolla blue">
+    </div>
+    <div class="gallery-slides2">
+      <img src="img/gallery/corolla/gallery-corolla-gray.jpg" alt="corolla gray">
+    </div>
+    <div class="gallery-slides2">
+      <img src="img/gallery/corolla/gallery-corolla-inside.jpg" alt="corolla inside">
+    </div>
+    <div class="gallery-slides2">
+      <img src="img/gallery/corolla/gallery-corolla-inside2.jpg" alt="corolla inside2">
+    </div>
+    <div class="gallery-slides2">
+      <img src="img/gallery/corolla/gallery-corolla-white.jpg" alt="corolla white">
+    </div>
+
+    <div>
+      <a class="gallery-prev gallery-arrows" onclick="nextGallerySlide(-1)">&#10094;</a>
+      <a class="gallery-next gallery-arrows" onclick="nextGallerySlide(1)">&#10095;</a>
+    </div>
+  </div>
+</div>
+
+
+  <!--86-->
+<div id="galleryModel3" class="galleryModel">
+  <span class="gallery-close cursor" onclick="closeGalleryModal()">&times;</span> 
+
+  <div class="gallery-modal-content">
+    <div class="gallery-slides3">
+      <img src="img/gallery/t86/gallery-t86-black.jpg" alt="t86 Black">
+    </div>
+    <div class="gallery-slides3">
+      <img src="img/gallery/t86/gallery-t86-blue.jpg" alt="t86 blue">
+    </div>
+    <div class="gallery-slides3">
+      <img src="img/gallery/t86/gallery-t86-gray.jpg" alt="t86 gray">
+    </div>
+    <div class="gallery-slides3">
+      <img src="img/gallery/t86/gallery-t86-inside.jpg" alt="t86 inside">
+    </div>
+    <div class="gallery-slides3">
+      <img src="img/gallery/t86/gallery-t86-inside2.jpg" alt="t86 inside3">
+    </div>
+    <div class="gallery-slides3">
+      <img src="img/gallery/t86/gallery-t86-white.jpg" alt="t86 white">
+    </div>
+
+    <div>
+      <a class="gallery-prev gallery-arrows" onclick="nextGallerySlide(-1)">&#10094;</a>
+      <a class="gallery-next gallery-arrows" onclick="nextGallerySlide(1)">&#10095;</a>
+    </div>
+  </div>
+</div>
+
+
+  <!--Yaris-->
+<div id="galleryModel4" class="galleryModel">
+  <span class="gallery-close cursor" onclick="closeGalleryModal()">&times;</span> 
+
+  <div class="gallery-modal-content">
+    <div class="gallery-slides4">
+      <img src="img/gallery/yaris/gallery-yaris-black.jpg" alt="yaris Black">
+    </div>
+    <div class="gallery-slides4">
+      <img src="img/gallery/yaris/gallery-yaris-blue.jpg" alt="yaris blue">
+    </div>
+    <div class="gallery-slides4">
+      <img src="img/gallery/yaris/gallery-yaris-gray.jpg" alt="yaris gray">
+    </div>
+    <div class="gallery-slides4">
+      <img src="img/gallery/yaris/gallery-yaris-inside.jpg" alt="yaris inside">
+    </div>
+    <div class="gallery-slides4">
+      <img src="img/gallery/yaris/gallery-yaris-inside2.jpg" alt="yaris inside4">
+    </div>
+    <div class="gallery-slides4">
+      <img src="img/gallery/yaris/gallery-yaris-white.jpg" alt="yaris white">
+    </div>
+
+    <div>
+      <a class="gallery-prev gallery-arrows" onclick="nextGallerySlide(-1)">&#10094;</a>
+      <a class="gallery-next gallery-arrows" onclick="nextGallerySlide(1)">&#10095;</a>
+    </div>
+  </div>
+</div>
+
+  <!--Avalon-->
+<div id="galleryModel5" class="galleryModel">
+  <span class="gallery-close cursor" onclick="closeGalleryModal()">&times;</span> 
+
+  <div class="gallery-modal-content">
+    <div class="gallery-slides5">
+      <img src="img/gallery/avalon/gallery-avalon-black.jpg" alt="avalon Black">
+    </div>
+    <div class="gallery-slides5">
+      <img src="img/gallery/avalon/gallery-avalon-blue.jpg" alt="avalon blue">
+    </div>
+    <div class="gallery-slides5">
+      <img src="img/gallery/avalon/gallery-avalon-gray.jpg" alt="avalon gray">
+    </div>
+    <div class="gallery-slides5">
+      <img src="img/gallery/avalon/gallery-avalon-inside.jpg" alt="avalon inside">
+    </div>
+    <div class="gallery-slides5">
+      <img src="img/gallery/avalon/gallery-avalon-inside2.jpg" alt="avalon inside5">
+    </div>
+    <div class="gallery-slides5">
+      <img src="img/gallery/avalon/gallery-avalon-white.jpg" alt="avalon white">
+    </div>
+
+    <div>
+      <a class="gallery-prev gallery-arrows" onclick="nextGallerySlide(-1)">&#10094;</a>
+      <a class="gallery-next gallery-arrows" onclick="nextGallerySlide(1)">&#10095;</a>
+    </div>
+  </div>
+</div>
+
+
+<!--LOAN CALCULATOR-->
+<section id="car-build__calculator">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card card-body text-center mt-5">
+          <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+
+          <form id="loan-form">
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text loan-amount">$</span>
+                </div>
+                <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+                <button id="get-car-total" class="btn-danger">Get Car Total</button>
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">%</span>
+                </div>
+                <input type="number" class="form-control" id="interest" placeholder="Interest">
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" id="years" placeholder="Years to Repay">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Calculate" class="btn btn-block calculate-button">
+            </div>
+          </form>
+          <!--Loader Here-->
+          <div id="loading">
+            <img src="img/35.gif" alt="">
+          </div>
+
+          <!--Results-->
+          <div id="results" class="pt-4">
+            <h5>Results</h5>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text montly-pay">Monthly Payment</span>
+                </div>
+                <input type="number" class="form-control" id="monthly-payment" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text total-pay">Total Payment</span>
+                </div>
+                <input type="number" class="form-control" id="total-payment" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text total-interest">Total Interest</span>
+                </div>
+                <input type="number" class="form-control" id="total-interest" disabled>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto explicabo dolorum laboriosam dolor temporibus totam eaque rem, ratione odio labore consequatur quas nisi laborum dicta maiores vitae debitis vero repudiandae incidunt? Harum accusamus animi ut consequatur delectus deserunt ab soluta officia possimus ratione asperiores nesciunt totam repudiandae, officiis molestias sequi illum perferendis odit autem! Cum fugiat sunt dignissimos fugit magnam, neque nisi. Nostrum dolorem nisi quas mollitia harum reiciendis quam veritatis, dolores dolore amet optio. Architecto, tempore! Sit quibusdam dolorum provident vero quaerat ipsum est nam et soluta dolor illo repudiandae tenetur, vel nobis tempore libero molestiae. Quasi, dolor quos.</div> -->
+
+
+
+
+
+
+
+<footer class="footer">
+  <p class="copy"> Copyright Toyota &copy;</p>
+  <div class="social">
+    <i class="fab fa-facebook-f footer-social"></i>
+    <i class="fab fa-instagram footer-social"></i>
+    <i class="fab fa-youtube footer-social"></i>
+    <i class="fab fa-twitter footer-social"></i>
+  </div>
+</footer>
+ 
+
+
+</div> <!--vehicleCartFunction end2-->
+</div> <!--navCloseFunction end-->
+
+</div>
+
+<%include partials/footer%>

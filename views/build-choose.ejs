@@ -1,0 +1,88 @@
+<%include partials/header%>
+<body class="build-price" onload="keepShopping()">
+<section id="footerBottom">
+
+<!-- Navigation -->
+<nav class="navbar">
+  <span class="open-slide">
+      <input type="checkbox" class="navigation__checkbox hamburger" id="navi-toggle">
+
+      <label for="navi-toggle" class="navigation__button">
+        <span class="nav-all">
+          <span class="navigation__icon1"></span>
+          <span class="navigation__icon2"></span>
+          <span class="navigation__icon3"></span>
+        </span>
+      </label>
+  </span>
+</nav>
+<img class="img__logo" src="img/toyota-logo.png" alt="">
+<div id="nav-menu" class="nav-nav">
+    <a href="/">Explore</a>
+    <a href="/build-choose">Build Car</a>
+    <!-- <a href="#">Services</a>
+    <a href="#">Contact</a> -->
+</div>
+
+
+
+<div class="navCloseFunction" onclick="navCloseFunction(event)">
+
+
+
+  <div class="container-fluid choose-car-container">
+      <h5 class="choose-car-header">Build your Car</h5>
+      <p class="choose-car-desc">Select a car to customize and start your building process. Select from below to get started.</p>
+      <hr class="choose-car-hr">
+    <div class="row">
+      <div class="col-md-6 choose-car" onclick="camrySessionStorage()">
+        <a href="/build-price" class="choose-car-a"><img src="img/camry/side/camry-side-red.jpg" class="choose-car-1 camry" alt="">
+          <div class="choose-car-model">Totota Camry</div>
+          <div class="choose-car-price">$23,495</div>
+          <div class="choose-car-mileage">29/41 est MPG</div>
+        </a>
+      </div>
+      <div class="col-md-6 choose-car" onclick="corollaSessionStorage()">
+        <a href="/build-price" class="choose-car-a"><img src="img/corolla/side/corolla-side-blue.jpg" class="choose-car-1 corolla" alt="">
+          <div class="choose-car-model">Totota Corolla</div>
+          <div class="choose-car-price">$18,550</div>
+          <div class="choose-car-mileage">28/36 est MPG</div>
+        </a>
+      </div>
+      <div class="col-md-6 choose-car" onclick="t86SessionStorage()">
+        <a href="/build-price" class="choose-car-a"><img src="img/t86/side/t86-side-red.jpg" class="choose-car-1 t86" alt="">
+          <div class="choose-car-model">Totota 86</div>
+          <div class="choose-car-price">$26,255</div>
+          <div class="choose-car-mileage">21/28 est MPG</div>
+        </a>
+      </div>
+      <div class="col-md-6 choose-car" onclick="yarisSessionStorage()">
+        <a href="/build-price" class="choose-car-a"><img src="img/yaris/side/yaris-side-blue.jpg" class="choose-car-1 yaris" alt="">
+          <div class="choose-car-model">Totota Yaris</div>
+          <div class="choose-car-price">$15,635</div>
+          <div class="choose-car-mileage">30/36 est MPG</div>
+        </a>
+      </div>
+      <div class="col-md-6 choose-car" onclick="avalonSessionStorage()">
+        <a href="/build-price" class="choose-car-a"><img src="img/avalon/side/avalon-side-white.jpg" class="choose-car-1 avalong" alt="">
+          <div class="choose-car-model">Totota Avalon</div>
+          <div class="choose-car-price">$33,500</div>
+          <div class="choose-car-mileage">21/30 est MPG</div>
+        </a>
+      </div>
+    </div>
+  </div> <!--container-fluid end-->
+
+
+  <footer class="footer">
+    <p class="copy"> Copyright Toyota &copy;</p>
+    <div class="social">
+      <i class="fab fa-facebook-f footer-social"></i>
+      <i class="fab fa-instagram footer-social"></i>
+      <i class="fab fa-youtube footer-social"></i>
+      <i class="fab fa-twitter footer-social"></i>
+    </div>
+  </footer>
+</div> <!--footerBottom End-->
+</div> <!--navCloseFunction end-->
+<%include partials/footer%>
