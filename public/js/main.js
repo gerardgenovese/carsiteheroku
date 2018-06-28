@@ -1245,6 +1245,9 @@ function retrieveVehicleCartOptions() {
   document.getElementById('addItem1').checked = false;
   document.getElementById('addItem2').checked = false;
   document.getElementById('addItem3').checked = false;
+  document.getElementById('addRemove1').innerHTML = 'Add';
+  document.getElementById('addRemove2').innerHTML = 'Add';
+  document.getElementById('addRemove3').innerHTML = 'Add';
 }
 
 function removeVehicleCartOptions() {
