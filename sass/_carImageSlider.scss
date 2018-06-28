@@ -309,6 +309,13 @@ transform: translateY(-50%);
     grid-row: 1/2;
   }
 }
+
+@media(max-width: 768px) {
+  #carSlideShow  {
+    margin-top:1rem;
+
+  }
+}
 @media(max-width: 750px){
   .carSlides-img{
     animation: mediaTwo 1s;

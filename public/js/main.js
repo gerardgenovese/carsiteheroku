@@ -1,4 +1,4 @@
-
+console.log
 
 //==================NAV FUNCTIONALITY=================//
 
@@ -28,12 +28,12 @@ function openSlideMenu() {
 
   // }
 
-  document.getElementById('nav-menu').style.height = '2.5rem';
+  document.getElementById('nav-menu').style.height = '3rem';
   document.querySelector('.navigation__icon1').style.background = 'white';
   document.querySelector('.navigation__icon3').style.background = 'white';
   // document.getElementById('main').style.marginLeft = '250px';
   navCount = 0;
-  console.log(navCount);
+  // console.log(navCount);
 
 
 
@@ -50,7 +50,7 @@ function closeSlideMenu() {
   document.querySelector('.navigation__icon3').style.background = '#333';
   // document.getElementById('main').style.marginLeft = '0';
   navCount = 1;
-  console.log(navCount)
+  // console.log(navCount)
   menuIconClosed();
   
 };
@@ -284,10 +284,10 @@ class Car {
 
     if (cost == '500') {
       sessionStorage.setItem('engine', 500)
-      console.log(cost);
+      // console.log(cost);
     } else {
       sessionStorage.setItem('engine', 0);
-      console.log(cost);
+      // console.log(cost);
     }
     totalCarPrice();
     return cost;
@@ -1139,10 +1139,10 @@ function selectVehicleFunctionality() {
       let isEven = vehCountNum => vehCountNum % 2 === 0 ? true : false;
       if (isEven(selectVehicleCount) === false) {
         openSelectVehiclesMenu();
-        console.log(selectVehicleCount + 'open')
+        // console.log(selectVehicleCount + 'open')
       } else if (isEven(selectVehicleCount) === true) {
         closeSelectVehiclesMenu();
-        console.log(selectVehicleCount + 'close');
+        // console.log(selectVehicleCount + 'close');
       } 
  
     e.preventDefault();
@@ -1271,17 +1271,17 @@ function removeVehicleCartOptions() {
 let vehicleCartCount = 1;
 function vehicleCartCountFunctionality() {
   if (document.body.classList.contains('build-price')) {
-    console.log('build-price')
+    // console.log('build-price')
     
     document.getElementById('car-build-vehicle_cart__toggle').addEventListener('click', (e) => {
     
       let isEven = vehCountNum => vehCountNum % 2 === 0 ? true : false;
       if (isEven(vehicleCartCount) === false) {
           openVehicleCart();
-          console.log(vehicleCartCount)
+          // console.log(vehicleCartCount)
       } else if (isEven(vehicleCartCount) === true) {
           closeVehicleCart();
-          console.log(vehicleCartCount)
+          // console.log(vehicleCartCount)
       } 
       e.preventDefault();
     });

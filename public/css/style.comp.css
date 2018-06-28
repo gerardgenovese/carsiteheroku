@@ -1257,6 +1257,10 @@ body {
     grid-column: 1 / span 2;
     grid-row: 1/2; } }
 
+@media (max-width: 768px) {
+  #carSlideShow {
+    margin-top: 1rem; } }
+
 @media (max-width: 750px) {
   .carSlides-img {
     animation: mediaTwo 1s;
@@ -1821,7 +1825,7 @@ body {
 
 .navbar {
   position: fixed;
-  top: -1%;
+  top: -.5%;
   right: 5%;
   z-index: 115; }
 
@@ -1909,18 +1913,20 @@ body {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .navbar {
-    top: -.5%;
+    top: 0;
     right: 10%; } }
 
 @media (max-width: 768px) {
   .navbar {
     position: fixed;
-    top: 0;
+    top: .5%;
     right: 5%;
     z-index: 115; }
   .img__logo {
     width: 7rem;
-    margin-top: .2rem; } }
+    margin-top: .6rem; }
+  .sliderbg {
+    margin-top: -1%; } }
 
 @media (max-width: 450px) {
   .nav-all {
