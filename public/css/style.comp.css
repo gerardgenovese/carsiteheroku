@@ -1851,7 +1851,7 @@ body {
 /* navigation hamburger lines */
 .navigation__icon1 {
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 0;
   width: 2rem;
   height: 2px;
@@ -1934,9 +1934,7 @@ body {
   .img__logo {
     width: 5rem; }
   .nav-nav a {
-    font-size: 1rem; }
-  .navigation__icon2 {
-    top: 55% !important; } }
+    font-size: 1rem; } }
 
 .purchased-header {
   text-align: center;
